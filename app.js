@@ -1,32 +1,35 @@
 "use strict";
-(() => {
-    // class Avenger {
-    //     nombre: string;
-    //     equipo: string;
-    //     nombreReal: string;
-    //     puedePelear: boolean;
-    //     peleasGanadas: number;
-    //     constructor(nombre: string,equipo:string){
-    //         this.nombre = nombre;
-    //         this.equipo = equipo;
-    //     }
-    // }
-    // const antman = new Avenger('Antman','Capi');
-    // console.log(antman);
-    class Avenger {
-        // nombre: string;
-        // equipo: string;
-        // nombreReal: string;
-        // puedePelear: boolean;
-        // peleasGanadas: number;
-        constructor(nombre, equipo, nombreReal, puedePelear = true, peleasGanadas = 0) {
-            this.nombre = nombre;
-            this.equipo = equipo;
-            this.nombreReal = nombreReal;
-            this.puedePelear = puedePelear;
-            this.peleasGanadas = peleasGanadas;
-        }
+let nombre = "Nicolás Cáceres";
+let edad = 39;
+let PERSONAJE = {
+    nombre,
+    edad,
+};
+const batman = {
+    nombre: "Bruno Díaz",
+    artesMarciales: ["Karate", "Aikido", "Wing Chun", "Jiu-Jitsu"],
+};
+const resultadoDoble = (a, b) => {
+    return (a + b) * 2;
+};
+const getAvenger = (nombre, poder, arma = "arco") => {
+    let mensaje = "";
+    if (poder) {
+        mensaje = `${nombre} tiene el poder de: ${poder} y un arma: ${arma}`;
     }
-    const antman = new Avenger('Antman', 'Capi');
-    console.log(antman);
-})(); //Funcion anonima autoinvocada
+    else {
+        mensaje = `${nombre} tiene un ${poder}`;
+    }
+    return mensaje;
+};
+const heroe = getAvenger('batman', 'tecnologia');
+console.log(heroe);
+class Rectangulo {
+    constructor(base, altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+    calcularArea() {
+        return this.base * this.altura;
+    }
+}
